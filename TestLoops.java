@@ -1,12 +1,11 @@
 public class TestLoops{
 public static void main(String[] args){
 
-    System.out.println("Hello");
+    int x = 2;
     
-        System.out.println("For the loop");
-    
-    for(int index = 0; index < 6; index++){
-            System.out.println("Hello");
-        }
+
+   for(int index = 0; index < 10; index +=2){
+       System.out.println(x*x);
+        }  
     }
 }
