@@ -46,7 +46,7 @@ public class Ship {
   }
   
   public String toString(){
-    return this.shipType + "is located at  " + this.x + ", " + this.y;
+    return this.shipType + "is located at  " + this.x + ", " + this.y + " and it's " + sunk + " that it has sunk.";
   } 
  
 }
