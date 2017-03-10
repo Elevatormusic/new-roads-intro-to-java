@@ -6,8 +6,8 @@ public class AIPlayer extends Player{
   
   public int[] generateShipLocation(){
     //use random to pick ships
-    int row = (int)(Math.random() * 5);
-    int col = (int)(Math.random() * 5);
+    int row = (int)(Math.random() *  5 + 1);
+    int col = (int)(Math.random() *  5 + 1);
     
     int[] shipLocation = new int[2];
     
@@ -20,8 +20,8 @@ public class AIPlayer extends Player{
   
   public int[] generateAttack(){
     //use random to pick coordinates to attack
-    int row = (int)(Math.random() * 5);
-    int col = (int)(Math.random() * 5);
+    int row = (int)(Math.random() *  5 + 1);
+    int col = (int)(Math.random() *  5 + 1);
     
     int[] shipLocation = new int[2];
     
