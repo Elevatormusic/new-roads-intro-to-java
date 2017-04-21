@@ -5,7 +5,7 @@ public class TestBattleShip{
   public static void main(String[] args){
     
      while (true){
-   
+   //variables
     Player human;
     AIPlayer ai = new AIPlayer();
     String yesOrNo = " "; 
@@ -22,7 +22,7 @@ public class TestBattleShip{
     
     
       //Output directions/intro to the console  
-      //splashscreen variables
+      //splashscreen variables + logo 
     String str = new String("@@@@@@@@@@@@@@@@____@@@@@@@@_@@@_@@@_@@@@@@@_____@_@@@@@_@@@@@@@\r\n@@@@@@@@@@@@@@@|@@_@\\@@@@@@|@|@|@|@|@|@@@@@/@____|@|@@@(_)@@@@@@\r\n@@@@@@@@@@@@@@@|@|_)@|@__@_|@|_|@|_|@|@___|@(___@|@|__@@_@_@__@@\r\n@@@@@@@@@@@@@@@|@@_@<@/@_`@|@__|@__|@|/@_@\\\\___@\\|@'_@\\|@|@'_@\\@\r\n@@@@@@@@@@@@@@@|@|_)@|@(_|@|@|_|@|_|@|@@__/____)@|@|@|@|@|@|_)@|\r\n@@@@@@@@@@@@@@@|____/@\\__,_|\\__|\\__|_|\\___|_____/|_|@|_|_|@.__/@\r\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|@|@@@@\r\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|_|@@@@\r\n                                                                           ");
     String str2 = new String("\r\n\r\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|__\r\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|\\/\r\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@---\r\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@/@|@[\r\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@!@@@@@@|@|||\r\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@_/|@@@@@_/|-++'\r\n@@@@@@@@@@@@@@@@@@@@@@@@+@@+--|@@@@|--|--|_@|-\r\n@@@@@@@@@@@@@@@@@@@@@{@/|__|@@|/\\__|@@|---@|||__/\r\n@@@@@@@@@@@@@@@@@@@@+---------------___[}-_===_.'____@@@@@@@@@@@@@@@@@/\\\r\n@@@@@@@@@@@@@@@@____`-'@||___-{]_|@_[}-@@|@@@@@|_[___\\==--@@@@@@@@@@@@\\/@@@_\r\n@__..._____--==/___]_|__|_____________________________[___\\==--____,------'@.7\r\n|@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@BB-61/\r\n@\\_________________________________________________________________________|");
      //splashscreen render 
@@ -61,7 +61,7 @@ public class TestBattleShip{
     boolean hit = gameplay.playerMove(aiBoard, input);
     if(hit()){
       
-      //add splash screen 
+      //add splash screen restart loop
       
       System.out.println("Would you like to restart? yes or no"); 
       yesOrNo = input.next();
@@ -69,7 +69,7 @@ public class TestBattleShip{
         new Delayer().delay();
         System.out.print("\033[H\033[2J");
       }
-     
+     //Miss help
     else{
       System.out.println("Missed!");
       new Delayer().delay();
@@ -84,7 +84,7 @@ public class TestBattleShip{
       row = (int)(Math.random() *  5 + 1);
       col = (int)(Math.random() *  5 + 1);
       new Delayer().delay();
-
+//player ship sunk restart
 
         if(userBoard.getBoard()[row][col] == '#'){
           System.out.println("AI sunk your ship!");
@@ -98,6 +98,7 @@ public class TestBattleShip{
             continue;
           }
       }
+       //
       else{
         System.out.println("AI missed!");
         guessBoard.getBoard()[row][col] = 'M';
